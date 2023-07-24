@@ -40,7 +40,7 @@ const Weather = () => {
 			const result = await response.json();
 			setforecast(result);
 		} catch (error) {
-			<p className='text-red-600'>Erorr fetching forcast data.... </p>;
+			<p className='text-red-600'>Error fetching forcast data.... </p>;
 		}
 	};
 
@@ -68,15 +68,7 @@ const Weather = () => {
 	};
 
 	// Checking condition if weather data not fetched
-	if (!weather) {
-		return (
-			<p className='text-gray-100 flex justify-center h-screen items-center'>
-				Loading weather data...
-			</p>
-		);
-	}
-	// Checking condition if weather data not fetched
-	if (!forecastData) {
+	if (!weather || !forecastData) {
 		return (
 			<p className='text-gray-100 flex justify-center h-screen items-center'>
 				Loading weather data...
@@ -120,10 +112,10 @@ const Weather = () => {
 								<span className='md:flex flex lg:flex-row flex-col  md:items-center '>
 									<span className='flex-grow flex flex-col pl-4'>
 										<h1 className='text-7xl flex font-medium text-white'>
-											{weather.current.temp_c}
+											{weather.current?.temp_c}
 											<p className='text-4xl  font-thin mx-2 '>°C</p>
 											<img
-												alt='testimonial'
+												alt='weather'
 												src={weather.current.condition.icon}
 												className='w-12 h-12 rounded-full flex-shrink-0 object-cover object-center'
 											/>
