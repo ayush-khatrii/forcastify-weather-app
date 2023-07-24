@@ -149,8 +149,8 @@ const Weather = () => {
 									<span className='flex md:flex-row  flex-col gap-5'>
 										<span className=' font-medium text-white'>
 											<p className='text-gray-600'>
-												<i className='fa-solid text-xl fa-wind px-2'></i>
 												Wind Speed
+												<i className='fa-solid text-xl fa-wind px-2'></i>
 											</p>
 
 											<span className='text-2xl'>
